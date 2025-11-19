@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  BooleanField,
-  FieldGroup,
-  RepeatedFieldGroup,
-  ModuleFields,
+    BooleanField,
+    FieldGroup,
+    RepeatedFieldGroup,
+    ModuleFields,
 } from '@hubspot/cms-components/fields';
 
 import ButtonContent from '../../components/ButtonComponent/ButtonContent.jsx';
@@ -47,10 +47,10 @@ const iconTypeVisibility = {
 
 
 export const fields = (
-  <ModuleFields>
+    <ModuleFields>
 
-    <FieldGroup label="Content Module" name="groupContent" display="drilldown">
-       <RepeatedFieldGroup
+        <FieldGroup label="Content Module" name="groupContent" display="drilldown">
+            {/* <RepeatedFieldGroup
             label='Button Section'
             name='groupButtons'
             display='inline'
@@ -71,8 +71,29 @@ export const fields = (
                                     buttonSizeVisibility= ''
                                     buttonStyleVisibility= ''
                                 />
-        </RepeatedFieldGroup>
-    </FieldGroup>
+        </RepeatedFieldGroup> */}
+            <RepeatedFieldGroup
+                label="Button Section"
+                name="groupButtons"
+                display="inline"
+            >
+                <ButtonContent
+                    namePrefix="groupButtons"
+                    textDefault="Learn more"
+                    linkDefault={{ open_in_new_tab: true }}
+                    iconPositionDefault="left"
+                    buttonVisibility={buttonTypeVisibility}
+                    ctaVisibility={ctaTypeVisibility}
+                    iconVisibility={iconTypeVisibility}
+                />
 
-  </ModuleFields>
+                <ButtonStyle
+                    namePrefix="groupButtons"
+                    buttonStyleDefault="primary"
+                    buttonSizeDefault="medium"
+                />
+            </RepeatedFieldGroup>
+        </FieldGroup>
+
+    </ModuleFields>
 );

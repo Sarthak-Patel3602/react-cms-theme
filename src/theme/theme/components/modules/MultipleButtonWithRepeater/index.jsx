@@ -8,12 +8,20 @@ import {
 } from '../../utils/content-fields.jsx';
 
 export function Component(props) {
+  // const {
+  //   module_id,
+  //   groupContent: {
+  //    groupButtons = [],
+  //   },
+  // } = props;
+
   const {
     module_id,
     groupContent: {
-     groupButtons = [],
-    },
+      groupButtons = [],
+    } = {},
   } = props;
+
 
   logInfo(props, 'props');
 
@@ -21,23 +29,37 @@ export function Component(props) {
   return (
     <div className="page-center">
 
-     <div className={Style.button_wrapper}>
-          {groupButtons.map((button, index) => (
-                  <div className={Style.btn_container} key={index}>
-                      <Button
-                          buttonSize={button.buttonStyleSize}
-                          buttonStyle={button.buttonStyleVariant}
-                          href={getLinkFieldHref(button.buttonContentLink)}
-                          rel={getLinkFieldRel(button.buttonContentLink)}
-                          target={getLinkFieldTarget(button.buttonContentLink)}
-                          showIcon={button.buttonContentShowIcon}
-                          iconFieldPath={`groupContent.groupButton[${index}].buttonContentIcon`}
-                          iconPosition={button.buttonContentIconPosition}
-                      >
-                          {button.buttonContentText}
-                      </Button>
-                  </div>
-          ))}
+      <div className={Style.button_wrapper}>
+        {groupButtons.map((button, index) => (
+          <div className={Style.btn_container} key={index}>
+            {/* <Button
+              buttonSize={button.buttonStyleSize}
+              buttonStyle={button.buttonStyleVariant}
+              href={getLinkFieldHref(button.buttonContentLink)}
+              rel={getLinkFieldRel(button.buttonContentLink)}
+              target={getLinkFieldTarget(button.buttonContentLink)}
+              showIcon={button.buttonContentShowIcon}
+              iconFieldPath={`groupContent.groupButton[${index}].buttonContentIcon`}
+              iconPosition={button.buttonContentIconPosition}
+            >
+              {button.buttonContentText}
+            </Button> */}
+
+            <Button
+              buttonSize={button.buttonStyleSize}
+              buttonStyle={button.buttonStyleVariant}
+              href={getLinkFieldHref(button.buttonContentLink)}
+              rel={getLinkFieldRel(button.buttonContentLink)}
+              target={getLinkFieldTarget(button.buttonContentLink)}
+              showIcon={button.buttonContentShowIcon}
+              iconFieldPath={`groupContent.groupButtons[${index}].buttonContentIcon`}
+              iconPosition={button.buttonContentIconPosition}
+            >
+              {button.buttonContentText}
+            </Button>
+
+          </div>
+        ))}
       </div>
     </div>
   );
