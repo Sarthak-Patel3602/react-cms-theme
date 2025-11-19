@@ -11,13 +11,15 @@ import ButtonStyle from '../../components/ButtonComponent/ButtonStyle.jsx';
 
 
 const matchButtonType = {
-    controlling_field_path: 'groupContent.groupButton.buttonContentType',
+    // controlling_field_path: 'groupContent.groupButton.buttonContentType',
+    controlling_field_path: 'groupContent.groupButtons.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^button$'
 };
 
 const matchCtaType = {
-    controlling_field_path: 'groupContent.groupButton.buttonContentType',
+    // controlling_field_path: 'groupContent.groupButton.buttonContentType',
+    controlling_field_path: 'groupContent.groupButtons.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^cta$'
 };
@@ -78,7 +80,7 @@ export const fields = (
                 display="inline"
             >
                 <ButtonContent
-                    namePrefix="groupButtons"
+                   namePrefix="groupButtons"
                     textDefault="Learn more"
                     linkDefault={{ open_in_new_tab: true }}
                     iconPositionDefault="left"
