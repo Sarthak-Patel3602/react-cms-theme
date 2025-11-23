@@ -14,8 +14,7 @@ const MyModal = () => {
       };
     }, []);
     return (
-        console.log("modal is called");
-      <>
+     <>
         <div
           className={Style.modal_wrapper}
           onClick={() => {
