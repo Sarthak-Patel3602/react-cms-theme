@@ -1,10 +1,18 @@
+.main_wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Overlay so HubSpot doesn’t break clicks */
+.modal_overlay {
+  position: relative;
+  z-index: 9999;
+}
+
 .modal_wrapper {
   position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  background-color: rgba(189, 189, 189, 0.9);
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal_container {
@@ -14,16 +22,16 @@
   transform: translate(-50%, -50%);
   max-width: 600px;
   padding: 25px;
-  background-color: #f5f5f5;
-  border-radius: 5px;
+  background-color: #fff;
+  border-radius: 8px;
   border: 2px solid #000000;
-  outline: none;
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in-out;
+  z-index: 10000;
 }
 
 .modal_btn {
   padding: 10px 20px;
-  background-color: #007bff; /* blue */
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -32,5 +40,9 @@
 }
 
 .modal_btn:hover {
-  background-color: #0056b3; /* darker blue */
+  background-color: #0056b3;
+}
+
+.content {
+  margin-top: 20px;
 }

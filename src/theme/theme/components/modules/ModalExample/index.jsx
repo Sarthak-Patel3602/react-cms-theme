@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 
-function MyModal({ close }) {
+/* ----------------- MODAL COMPONENT ----------------- */
+function MyModal({ onClose }) {
   useEffect(() => {
     document.body.style.overflowY = "hidden";
     return () => {
@@ -10,43 +11,45 @@ function MyModal({ close }) {
   }, []);
 
   return (
-    <>
-      <div className={styles.modal_wrapper} onClick={close}></div>
+    <div className={styles.modal_overlay}>
+      <div className={styles.modal_wrapper} onClick={onClose}></div>
 
       <div className={styles.modal_container}>
         <h1>This is a heading</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, adipisci.
         </p>
 
-        <button className={styles.modal_btn} onClick={close}>
-          Close Button
+        <button className={styles.modal_btn} onClick={onClose}>
+          Close Modal
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
-export function Component() {
+/* ----------------- MAIN COMPONENT ----------------- */
+export function Component(props) {
   const [showModal, setShowModal] = useState(false);
 
   const open = () => setShowModal(true);
   const close = () => setShowModal(false);
 
   return (
-    <>
+    <div className={styles.main_wrapper}>
       <button className={styles.modal_btn} onClick={open}>
         Open Modal
       </button>
 
       <div className={styles.content}>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam ut
+          earum cumque debitis?
         </p>
       </div>
 
-      {showModal && <MyModal close={close} />}
-    </>
+      {showModal && <MyModal onClose={close} />}
+    </div>
   );
 }
 
