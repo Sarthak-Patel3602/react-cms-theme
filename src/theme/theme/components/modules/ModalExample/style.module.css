@@ -1,4 +1,4 @@
-.modal-wrapper {
+.modal_wrapper {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -7,7 +7,7 @@
   background-color: rgba(189, 189, 189, 0.9);
 }
 
-.modal-container {
+.modal_container {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -21,7 +21,7 @@
   transition: all 0.3s ease-in;
 }
 
-.modal-btn {
+.modal_btn {
   padding: 10px 20px;
   background-color: #007bff; /* blue */
   color: #fff;
@@ -31,6 +31,6 @@
   font-size: 16px;
 }
 
-.modal-btn:hover {
+.modal_btn:hover {
   background-color: #0056b3; /* darker blue */
 }

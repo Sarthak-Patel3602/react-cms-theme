@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './style.module.css';
+import {Style} from './style.module.css';
 import { logInfo } from '@hubspot/cms-components';
 
 export function Component(props) {
@@ -14,21 +14,22 @@ const MyModal = () => {
       };
     }, []);
     return (
+        console.log("modal is called");
       <>
         <div
-          className="modal-wrapper"
+          className={Style.modal_wrapper}
           onClick={() => {
             setShowModal(false);
           }}
         ></div>
-        <div className="modal-container">
+        <div className={Style.modal_container}>
           <h1>This is a heading</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex at quo
             minima vel, iste sed tenetur? Cupiditate suscipit accusantium alias.
           </p>
           <button
-            className="modal-btn"
+            className={Style.modal_btn}
             onClick={() => {
               setShowModal(false);
             }}
@@ -44,14 +45,14 @@ const MyModal = () => {
 return (
     <>
 <button
-        className="modal-btn"
+        className={Style.modal_btn}
         onClick={() => {
           setShowModal(true);
         }}
       >
         Open Modal
       </button>
-      <div className="content">
+      <div className={Style.content}>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum quisquam
           sed consequuntur ullam amet, quo corrupti aliquid voluptate ex
