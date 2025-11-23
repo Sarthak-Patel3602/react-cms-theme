@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './style.module.css';
 import { logInfo } from '@hubspot/cms-components';
 
 export function Component(props) {
