@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {Style} from './style.module.css';
+import Style from './style.module.css';
 import { logInfo } from '@hubspot/cms-components';
 
 export function Component(props) {
