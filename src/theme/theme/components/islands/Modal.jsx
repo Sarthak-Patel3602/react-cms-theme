@@ -53,4 +53,4 @@ export function Modal(props) {
     );
 }
 
-export default BackgroundVideo;
+export default Modal;
