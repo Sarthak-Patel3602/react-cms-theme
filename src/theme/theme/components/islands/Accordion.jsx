@@ -33,12 +33,12 @@ const Accordion = () => {
             <div className={Styles.accordion_grid}>
               <p className={Styles.accordion_question}>{question}</p>
 
-              <button
+              <div
                 onClick={() => handleToggle(id)}
-                className={activeId === id ? "active_btn" : ""}
+                className={activeId === id ? Styles.active_btn : ""}
               >
                 {activeId === id ? "Close" : "Show"}
-              </button>
+              </div>
             </div>
 
             {activeId === id && <p className={Styles.accordion_answer}>{answer}</p>}
