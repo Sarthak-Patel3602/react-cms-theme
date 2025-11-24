@@ -20,9 +20,9 @@ function MyModal({ onClose }) {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, adipisci.
                 </p>
 
-                <button className={styles.modal_btn} onClick={onClose}>
+                <div className={styles.modal_btn} onClick={onClose}>
                     Close Modal
-                </button>
+                </div>
             </div>
         </div>
     );
@@ -37,9 +37,9 @@ export function Modal(props) {
 
     return (
         <div className={styles.main_wrapper}>
-            <button className={styles.modal_btn} onClick={open}>
+            <div className={styles.modal_btn} onClick={open}>
                 Open Modal
-            </button>
+            </div>
 
             <div className={styles.content}>
                 <p>
