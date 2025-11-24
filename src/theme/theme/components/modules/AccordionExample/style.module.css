@@ -1,3 +1,46 @@
+p,
+a,
+li,
+input {
+  font-size: 1.6rem;
+  letter-spacing: 0.12rem;
+  line-height: 1.5;
+  color: #fff;
+  list-style: none;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 3.4rem;
+  text-decoration: underline;
+  font-family: "syne";
+  letter-spacing: 0.1rem;
+}
+
+button {
+  padding: 0rem 1.2rem;
+  border-radius: 0.3rem;
+  height: 4rem;
+  cursor: pointer;
+  border: 0;
+  background-color: #18dc9b;
+  box-shadow: #000 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+  margin-left: 1.2rem;
+}
+
+button:hover {
+  background-color: #18dc9b;
+  color: #fff;
+  box-shadow: #09ac73 0px 7px 19px 0px;
+}
+
+/* ================================================ */
+/* MAIN ACCORDION */
 .section_accordion {
   width: 60%;
   margin: auto;
@@ -12,20 +55,22 @@
   background-color: #212f3c;
   padding: 1.6rem;
   border-radius: 0.3rem;
-  list-style: none;
+  list-style-position: inside;
   border-left: 0.2rem solid #fff;
+  list-style: none;
 }
 
-.active_btn {
+.section_accordion .active_btn {
   background-color: #e74c3c;
   color: #fff;
 }
 
-.active_btn:hover {
+.section_accordion .active_btn:hover {
   color: #fff;
   box-shadow: #a7360d 0px 7px 19px 0px;
 }
 
+/* Accordion grid */
 .accordion_grid {
   display: flex;
   justify-content: space-between;
@@ -39,9 +84,21 @@
   font-size: 1.7rem;
 }
 
-.accordion_answer {
-  margin-top: 1rem;
-  color: #fff;
-  font-size: 1.5rem;
-  line-height: 1.5;
+/* ================================================ */
+/* Media Queries */
+@media screen and (max-width: 980px) {
+  .section_form form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .section_post ol {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .section_post ol {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
