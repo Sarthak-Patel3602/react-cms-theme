@@ -24,13 +24,13 @@ export default function Accordion({ items }) {
         <div className="accordion">
             {list.map((item, index) => (
                 <div className={styles.accordion_item} key={item.id}>
-                    <button
+                    <div
                         className={`${styles.accordion_header} ${openIndex === index ? styles.open : ""}`}
                         onClick={() => toggleIndex(index)}
                     >
                         <span style={{ color: "#000000" }}>{item.title}</span>
                         <span className={styles.accordion_icon} style={{ color: "#000000" }}>{openIndex === index ? "-" : "+"}</span>
-                    </button>
+                    </div>
 
                     <div className={`${styles.accordion_content} ${openIndex === index ? styles.open : ""}`}>
                         <div className={styles.accordion_content_inner} style={{ color: "#000000" }}>{item.content}</div>
