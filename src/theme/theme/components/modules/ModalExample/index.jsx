@@ -1,60 +1,30 @@
-import React, { useEffect, useState } from "react";
-import styles from "./style.module.css";
+import React from 'react';
+import popupModal from '../../islands/Modal?island';
+import { Island, logInfo } from '@hubspot/cms-components';
+import Styles from './style.module.css';
 
-/* ----------------- MODAL COMPONENT ----------------- */
-function MyModal({ onClose }) {
-  useEffect(() => {
-    document.body.style.overflowY = "hidden";
-    return () => {
-      document.body.style.overflowY = "scroll";
-    };
-  }, []);
-
-  return (
-    <div className={styles.modal_overlay}>
-      <div className={styles.modal_wrapper} onClick={onClose}></div>
-
-      <div className={styles.modal_container}>
-        <h1>This is a heading</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, adipisci.
-        </p>
-
-        <button className={styles.modal_btn} onClick={onClose}>
-          Close Modal
-        </button>
-      </div>
-    </div>
-  );
-}
-
-/* ----------------- MAIN COMPONENT ----------------- */
 export function Component(props) {
-  const [showModal, setShowModal] = useState(false);
 
-  const open = () => setShowModal(true);
-  const close = () => setShowModal(false);
+  const {
 
+  } = props;
+
+  logInfo(props, 'props');
   return (
-    <div className={styles.main_wrapper}>
-      <button className={styles.modal_btn} onClick={open}>
-        Open Modal
-      </button>
-
-      <div className={styles.content}>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam ut
-          earum cumque debitis?
-        </p>
-      </div>
-
-      {showModal && <MyModal onClose={close} />}
-    </div>
+    <>
+      <section>
+        <Island module={popupModal} clientOnly hydrateOn='idle' />
+      </section>
+    </>
   );
 }
 
-export { fields } from "./fields.jsx";
+
+export { fields } from './fields.jsx';
+
 
 export const meta = {
-  label: "Modal Example",
+  label: 'Modal Example',
 };
+
+
