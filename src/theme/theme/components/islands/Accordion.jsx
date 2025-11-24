@@ -1,42 +1,52 @@
-import React, { useState, useEffect } from "react";
-import styles from "../modules/AccordionExample/style.module.css";
+import React, { useState } from "react";
+import Styles from "../modules/AccordionExample/style.module.css";
+const Accordion = () => {
+  // FAQ Data inside same file
+  const faqData = [
+    {
+      id: 1,
+      question: "What is React.js and why should I use it?",
+      answer:
+        "React.js is a powerful JavaScript library for building user interfaces. It helps create fast, dynamic, and scalable applications.",
+    },
+    {
+      id: 2,
+      question: "How does the Virtual DOM in React work?",
+      answer:
+        "React creates a virtual DOM and compares it with the real DOM to update only the necessary parts, improving performance.",
+    },
+  ];
 
-export default function Accordion({ items }) {
-    const defaultItems = [
-        { id: 1, title: "First item", content: "Content for the first item." },
-        { id: 2, title: "Second item", content: "Content for the second item." },
-        { id: 3, title: "Third item", content: "Content for the third item." },
-    ];
+  const [activeId, setActiveId] = useState(null);
 
-    const list = items && items.length ? items : defaultItems;
+  const handleToggle = (id) => {
+    setActiveId((prev) => (prev === id ? null : id));
+  };
 
-    const [openIndex, setOpenIndex] = useState(null);
+  return (
+    <div>
+      <h1>The Accordion</h1>
 
-    useEffect(() => {
-        setOpenIndex(0);
-    }, []);
+      <ul className={Styles.section_accordion}>
+        {faqData.map(({ id, question, answer }) => (
+          <li key={id} onClick={() => handleToggle(id)}>
+            <div className={Styles.accordion_grid}>
+              <p className={Styles.accordion_question}>{question}</p>
 
-    const toggleIndex = (index) => {
-        setOpenIndex((current) => (current === index ? null : index));
-    };
+              <button
+                onClick={() => handleToggle(id)}
+                className={activeId === id ? "active_btn" : ""}
+              >
+                {activeId === id ? "Close" : "Show"}
+              </button>
+            </div>
 
-    return (
-        <div className="accordion">
-            {list.map((item, index) => (
-                <div className={styles.accordion_item} key={item.id}>
-                    <div
-                        className={`${styles.accordion_header} ${openIndex === index ? styles.open : ""}`}
-                        onClick={() => toggleIndex(index)}
-                    >
-                        <span style={{ color: "#000000" }}>{item.title}</span>
-                        <span className={styles.accordion_icon} style={{ color: "#000000" }}>{openIndex === index ? "-" : "+"}</span>
-                    </div>
+            {activeId === id && <p className={Styles.accordion_answer}>{answer}</p>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-                    <div className={`${styles.accordion_content} ${openIndex === index ? styles.open : ""}`}>
-                        <div className={styles.accordion_content_inner} style={{ color: "#000000" }}>{item.content}</div>
-                    </div>
-                </div>
-            ))}
-        </div>
-    );
-}
+export default Accordion;
