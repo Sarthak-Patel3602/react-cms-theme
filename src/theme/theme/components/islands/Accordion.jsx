@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import Styles from "../modules/AccordionExample/style.module.css";
+
 const Accordion = () => {
-  // FAQ Data inside same file
   const faqData = [
     {
       id: 1,
       question: "What is React.js and why should I use it?",
       answer:
-        "React.js is a powerful JavaScript library for building user interfaces. It helps create fast, dynamic, and scalable applications.",
+        "React.js is a powerful JavaScript library for building user interfaces.",
     },
     {
       id: 2,
       question: "How does the Virtual DOM in React work?",
       answer:
-        "React creates a virtual DOM and compares it with the real DOM to update only the necessary parts, improving performance.",
+        "React creates a virtual DOM and compares it with the real DOM.",
     },
   ];
 
@@ -29,19 +29,27 @@ const Accordion = () => {
 
       <ul className={Styles.section_accordion}>
         {faqData.map(({ id, question, answer }) => (
-          <li key={id} onClick={() => handleToggle(id)}>
+          <li key={id}>
             <div className={Styles.accordion_grid}>
               <p className={Styles.accordion_question}>{question}</p>
 
+              {/* FIXED HERE */}
               <div
-                onClick={() => handleToggle(id)}
-                className={activeId === id ? Styles.active_btn : ""}
+                className={`${Styles.accordion_btn} ${
+                  activeId === id ? Styles.active_btn : ""
+                }`}
+                onClick={(e) => {
+                  e.stopPropagation(); // Important fix
+                  handleToggle(id);
+                }}
               >
                 {activeId === id ? "Close" : "Show"}
               </div>
             </div>
 
-            {activeId === id && <p className={Styles.accordion_answer}>{answer}</p>}
+            {activeId === id && (
+              <p className={Styles.accordion_answer}>{answer}</p>
+            )}
           </li>
         ))}
       </ul>
