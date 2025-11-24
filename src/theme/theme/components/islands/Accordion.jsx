@@ -28,12 +28,12 @@ export default function Accordion({ items }) {
                         className={`${styles.accordion_header} ${openIndex === index ? styles.open : ""}`}
                         onClick={() => toggleIndex(index)}
                     >
-                        <span>{item.title}</span>
-                        <span className={styles.accordion_icon}>{openIndex === index ? "-" : "+"}</span>
+                        <span style={{ color: "#000000" }}>{item.title}</span>
+                        <span className={styles.accordion_icon} style={{ color: "#000000" }}>{openIndex === index ? "-" : "+"}</span>
                     </button>
 
                     <div className={`${styles.accordion_content} ${openIndex === index ? styles.open : ""}`}>
-                        <div className={styles.accordion_content_inner}>{item.content}</div>
+                        <div className={styles.accordion_content_inner} style={{ color: "#000000" }}>{item.content}</div>
                     </div>
                 </div>
             ))}
