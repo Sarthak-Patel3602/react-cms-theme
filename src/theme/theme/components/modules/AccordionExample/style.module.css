@@ -10,12 +10,12 @@
 }
 
 .accordion_item + .accordion_item {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #ddd !important;
 }
 
 .accordion_header {
   width: 100%;
-  background: #fff;
+  background: #fff !important;
   padding: 15px 20px;
   border: none;
   display: flex;
@@ -26,7 +26,7 @@
 }
 
 .accordion_header.open {
-  background: #f1f1f1;
+  background: #f1f1f1 !important;
 }
 
 .accordion_icon {
@@ -37,7 +37,7 @@
 .accordion_content {
   max-height: 0;
   overflow: hidden;
-  background: #fafafa;
+  background: #fafafa !important;
   /* transition: max-height 0.3s ease, padding 0.3s ease; */
 }
 
@@ -48,5 +48,5 @@
 
 .accordion_content_inner {
   font-size: 15px;
-  color: #333;
+  color: #333 !important;
 }
