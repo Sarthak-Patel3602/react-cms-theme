@@ -12,7 +12,9 @@
 .accordion_item + .accordion_item {
   border-top: 1px solid #ddd !important;
 }
-
+.accordion_item{
+    margin-bottom: 10px;
+}
 .accordion_header {
   width: 100%;
   background: #fff !important;
