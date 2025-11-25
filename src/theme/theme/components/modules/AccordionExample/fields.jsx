@@ -9,23 +9,23 @@ import {
 export const fields = (
     <ModuleFields>
 
-        <RepeatedFieldGroup
-            name='accordionItems'
-            label='Accordion Items'
-        >
-            <TextField
-                name='question'
-                label='Question'
-                required={true}
-                defaultValue='Sample Question'
-            />
-            <RichtextField
-                name='answer'
-                label='Answer'
-                required={true}
-                defaultValue='Sample Answer'
-            />
-        </RepeatedFieldGroup>
+            <RepeatedFieldGroup
+                name='accordionItems'
+                label='Accordion Items'
+            >
+                <TextField
+                    name='question'
+                    label='Question'
+                    required={true}
+                    defaultValue='Sample Question'
+                />
+                <RichtextField
+                    name='answer'
+                    label='Answer'
+                    required={true}
+                    defaultValue='Sample Answer'
+                />
+            </RepeatedFieldGroup>
 
 
     </ModuleFields>

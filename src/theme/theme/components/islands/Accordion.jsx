@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Styles from "../modules/AccordionExample/style.module.css";
 
-const Accordion = (accordionItems) => {
+const Accordion = () => {
   const faqData = [
     {
       id: 1,
