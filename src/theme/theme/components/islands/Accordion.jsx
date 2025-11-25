@@ -29,13 +29,12 @@ const Accordion = () => {
 
       <ul className={Styles.section_accordion}>
         {faqData.map(({ id, question, answer }) => (
-          <li key={id}>
+          <li key={id} onClick={(e) => {
+            e.stopPropagation(); // Important fix
+            handleToggle(id);
+          }}>
             <div className={Styles.accordion_grid}>
-              <p className={Styles.accordion_question}
-                onClick={(e) => {
-                  e.stopPropagation(); // Important fix
-                  handleToggle(id);
-                }}>{question}</p>
+              <p className={Styles.accordion_question}>{question}</p>
 
               {/* FIXED HERE */}
               <div
