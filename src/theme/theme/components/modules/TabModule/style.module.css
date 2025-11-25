@@ -20,20 +20,18 @@
   cursor: pointer;
   border-right: 1px solid #ddd;
   transition: 0.3s;
+  color: #000;
 }
 
 .tab_btn:last-child {
   border-right: none;
 }
 
-.tab_btn:hover {
-  background: #e3e3e3;
-}
-
 .tab_btn.active {
-  background: #fff;
-  border-bottom: 2px solid #000;
+  background: #000;
+  border-bottom: 2px solid #dcc544;
   font-weight: bold;
+  color: #fff;
 }
 
 .tab_content {
@@ -62,10 +60,6 @@
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-}
-
-.accordion_header:hover {
-  background: #e3e3e3;
 }
 
 .accordion_body {

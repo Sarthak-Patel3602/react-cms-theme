@@ -28,13 +28,13 @@ const TabsAccordion = () => {
         <>
           <div className={Styles.tab_header}>
             {tabs.map((tab, index) => (
-              <button
+              <div
                 key={index}
                 className={`${Styles.tab_btn} ${activeIndex === index ? Styles.active : ""}`}
                 onClick={() => setActiveIndex(index)}
               >
                 {tab.title}
-              </button>
+              </div>
             ))}
           </div>
 
@@ -49,13 +49,13 @@ const TabsAccordion = () => {
         <div className={Styles.accordion_wrapper}>
           {tabs.map((tab, index) => (
             <div key={index} className={Styles.accordion_item}>
-              <button
+              <div
                 className={Styles.accordion_header}
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
               >
                 {tab.title}
                 <span className={Styles.arrow}>{activeIndex === index ? "-" : "+"}</span>
-              </button>
+              </div>
 
               {activeIndex === index && (
                 <div className={Styles.accordion_body}>
