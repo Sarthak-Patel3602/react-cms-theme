@@ -14,7 +14,7 @@ export function Component(props) {
     return (
         <>
             <section>
-                <Island module={Accordion} groupContent={groupContent} clientOnly hydrateOn='idle' />
+                <Island module={Accordion}  accordionItems={groupContent.accordionItems}  clientOnly hydrateOn='idle' />
             </section>
         </>
     );
