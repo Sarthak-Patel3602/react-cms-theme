@@ -1,19 +1,20 @@
 import React from 'react';
 import Accordion from '../../islands/Accordion?island';
 import { Island, logInfo } from '@hubspot/cms-components';
-import Styles from './style.module.css';
 
 export function Component(props) {
 
     const {
-
+        groupContent = {
+            accordionItems: [],
+        },
     } = props;
 
     logInfo(props, 'props');
     return (
         <>
             <section>
-                <Island module={Accordion} clientOnly hydrateOn='idle' />
+                <Island module={Accordion} groupContent={groupContent.accordionItems} clientOnly hydrateOn='idle' />
             </section>
         </>
     );
