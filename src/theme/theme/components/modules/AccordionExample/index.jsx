@@ -5,7 +5,6 @@ import { Island, logInfo } from '@hubspot/cms-components';
 export function Component(props) {
 
     const {
-            accordionItems = [],
     } = props;
 
     logInfo(props, 'props');
