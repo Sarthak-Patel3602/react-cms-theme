@@ -19,6 +19,9 @@ export function Component(props) {
     );
 }
 
+export { fields } from './fields.jsx';
+
+
 export const meta = {
     label: 'Tab Module Example',
 };
