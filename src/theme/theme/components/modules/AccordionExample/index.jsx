@@ -5,16 +5,14 @@ import { Island, logInfo } from '@hubspot/cms-components';
 export function Component(props) {
 
     const {
-        groupContent = {
-            accordionItems: [],
-        },
+            accordionItems = [],
     } = props;
 
     logInfo(props, 'props');
     return (
         <>
             <section>
-                <Island module={Accordion}  accordionItems={groupContent.accordionItems}  clientOnly hydrateOn='idle' />
+                <Island module={Accordion}  accordionItems={accordionItems}  clientOnly hydrateOn='idle' />
             </section>
         </>
     );

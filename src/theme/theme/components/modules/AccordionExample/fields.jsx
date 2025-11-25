@@ -1,7 +1,6 @@
 import {
-    FieldGroup,
     ModuleFields,
-    RepeaterField,
+    RepeatedFieldGroup,
     TextField,
     RichtextField,
 } from '@hubspot/cms-components/fields';
@@ -10,30 +9,23 @@ import {
 export const fields = (
     <ModuleFields>
 
-        <FieldGroup
-            label='Content Module'
-            name='groupContent'
-            display='drilldown'
+        <RepeatedFieldGroup
+            name='accordionItems'
+            label='Accordion Items'
         >
-            <RepeaterField
-                name='accordionItems'
-                label='Accordion Items'
-            >
-                <TextField
-                    name='question'
-                    label='Question'
-                    required={true}
-                    defaultValue='Sample Question'
-                />
-                <RichtextField
-                    name='answer'
-                    label='Answer'
-                    required={true}
-                    defaultValue='Sample Answer'
-                />
-            </RepeaterField>
-
-        </FieldGroup>
+            <TextField
+                name='question'
+                label='Question'
+                required={true}
+                defaultValue='Sample Question'
+            />
+            <RichtextField
+                name='answer'
+                label='Answer'
+                required={true}
+                defaultValue='Sample Answer'
+            />
+        </RepeatedFieldGroup>
 
 
     </ModuleFields>
