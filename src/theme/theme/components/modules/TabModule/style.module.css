@@ -1,0 +1,72 @@
+.tab_container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Desktop Tabs */
+.tab_header {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab_btn {
+  flex: 1;
+  padding: 12px 20px;
+  background: #f7f7f7;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-right: 1px solid #ddd;
+  transition: 0.3s;
+  color: #000;
+}
+
+.tab_btn:last-child {
+  border-right: none;
+}
+
+.tab_btn.active {
+  background: #000;
+  border-bottom: 2px solid #dcc544;
+  font-weight: bold;
+  color: #fff;
+}
+
+.tab_content {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+/* Mobile Accordion */
+.accordion_wrapper {
+  width: 100%;
+}
+
+.accordion_item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion_header {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  background: #f7f7f7;
+  border: none;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.accordion_body {
+  padding: 15px;
+  background: #fff;
+}
+
+.arrow {
+  font-size: 20px;
+}

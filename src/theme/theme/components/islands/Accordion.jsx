@@ -29,15 +29,17 @@ const Accordion = () => {
 
       <ul className={Styles.section_accordion}>
         {faqData.map(({ id, question, answer }) => (
-          <li key={id}>
+          <li key={id} onClick={(e) => {
+            e.stopPropagation(); // Important fix
+            handleToggle(id);
+          }}>
             <div className={Styles.accordion_grid}>
               <p className={Styles.accordion_question}>{question}</p>
 
               {/* FIXED HERE */}
               <div
-                className={`${Styles.accordion_btn} ${
-                  activeId === id ? Styles.active_btn : ""
-                }`}
+                className={`${Styles.accordion_btn} ${activeId === id ? Styles.active_btn : ""
+                  }`}
                 onClick={(e) => {
                   e.stopPropagation(); // Important fix
                   handleToggle(id);
