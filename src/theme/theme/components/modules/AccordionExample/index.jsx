@@ -6,7 +6,7 @@ import Styles from './style.module.css';
 export function Component(props) {
 
     const {
-
+        accordion_items = [],
     } = props;
 
     logInfo(props, 'props');
