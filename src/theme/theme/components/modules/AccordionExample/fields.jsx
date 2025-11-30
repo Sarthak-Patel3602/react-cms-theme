@@ -2,12 +2,12 @@ import React from 'react';
 import {
   ModuleFields,
   TextField,
-  RepeaterFieldGroup,
+  RepeaterFieldsGroup,
 } from '@hubspot/cms-components/fields';
 
 export const fields = (
   <ModuleFields>
-        <RepeaterFieldGroup
+        <RepeaterFieldsGroup
       label="Accordion Items"
       name="accordion_items"    >
 
@@ -18,7 +18,7 @@ export const fields = (
         default="This is the content for the accordion item. You can add any text or HTML content here."    
         type="textarea"
          />
-      </RepeaterFieldGroup>
+      </RepeaterFieldsGroup>
 
   </ModuleFields>
 );
