@@ -4,7 +4,7 @@ import Styles from "../modules/AccordionExample/style.module.css";
 
 
 
-const Accordion = () => {
+const Accordion = (props) => {
   // const faqData = [
   //   {
   //     id: 1,
