@@ -24,8 +24,8 @@ const Accordion = (props) => {
 
   const [activeId, setActiveId] = useState(null);
 
-  const handleToggle = (id) => {
-    setActiveId((prev) => (prev === id ? null : id));
+  const handleToggle = (index) => {
+    setActiveId((prev) => (prev === index ? null : index));
   };
 
 
@@ -42,28 +42,28 @@ const Accordion = (props) => {
       <h1>The Accordion</h1>
 
       <ul className={Styles.section_accordion}>
-        {accordion_items.map(({title,content}) => (
-          <li key={id} onClick={(e) => {
+        {accordion_items.map(({title,content},index) => (
+          <li key={index} onClick={(e) => {
             e.stopPropagation(); // Important fix
-            handleToggle(id);
+            handleToggle(index);
           }}>
             <div className={Styles.accordion_grid}>
               <p className={Styles.accordion_question}>{title}</p>
 
               {/* FIXED HERE */}
               <div
-                className={`${Styles.accordion_btn} ${activeId === id ? Styles.active_btn : ""
+                className={`${Styles.accordion_btn} ${activeId === index ? Styles.active_btn : ""
                   }`}
                 onClick={(e) => {
                   e.stopPropagation(); // Important fix
-                  handleToggle(id);
+                  handleToggle(index);
                 }}
               >
-                {activeId === id ? "Close" : "Show"}
+                {activeId === index ? "Close" : "Show"}
               </div>
             </div>
 
-            {activeId === id && (
+            {activeId === index && (
               <p className={Styles.accordion_answer}>{content}</p>
             )}
           </li>
