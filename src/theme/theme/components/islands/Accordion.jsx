@@ -7,20 +7,20 @@ import { logInfo } from '@hubspot/cms-components';
 
 
 const Accordion = (props) => {
-  const faqData = [
-    {
-      id: 1,
-      question: "What is React.js and why should I use it?",
-      answer:
-        "React.js is a powerful JavaScript library for building user interfaces.",
-    },
-    {
-      id: 2,
-      question: "How does the Virtual DOM in React work?",
-      answer:
-        "React creates a virtual DOM and compares it with the real DOM.",
-    },
-  ];
+  // const faqData = [
+  //   {
+  //     id: 1,
+  //     question: "What is React.js and why should I use it?",
+  //     answer:
+  //       "React.js is a powerful JavaScript library for building user interfaces.",
+  //   },
+  //   {
+  //     id: 2,
+  //     question: "How does the Virtual DOM in React work?",
+  //     answer:
+  //       "React creates a virtual DOM and compares it with the real DOM.",
+  //   },
+  // ];
 
   const [activeId, setActiveId] = useState(null);
 
@@ -42,13 +42,13 @@ const Accordion = (props) => {
       <h1>The Accordion</h1>
 
       <ul className={Styles.section_accordion}>
-        {faqData.map(({ id, question, answer }) => (
+        {accordion_items.map(({title,content}) => (
           <li key={id} onClick={(e) => {
             e.stopPropagation(); // Important fix
             handleToggle(id);
           }}>
             <div className={Styles.accordion_grid}>
-              <p className={Styles.accordion_question}>{question}</p>
+              <p className={Styles.accordion_question}>{title}</p>
 
               {/* FIXED HERE */}
               <div
@@ -64,7 +64,7 @@ const Accordion = (props) => {
             </div>
 
             {activeId === id && (
-              <p className={Styles.accordion_answer}>{answer}</p>
+              <p className={Styles.accordion_answer}>{content}</p>
             )}
           </li>
         ))}
