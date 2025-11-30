@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Styles from "../modules/AccordionExample/style.module.css";
+import { logInfo } from '@hubspot/cms-components';
+
 
 
 
