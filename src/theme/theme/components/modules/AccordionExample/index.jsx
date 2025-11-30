@@ -8,11 +8,11 @@ export function Component(props) {
         accordion_items = [],
     } = props;
 
-    logInfo(props, 'props');
+    // logInfo(props, 'props');
     return (
         <>
             <section>
-                <Island module={Accordion} clientOnly hydrateOn='idle' />
+                <Island module={Accordion} accordion_items={accordion_items} clientOnly hydrateOn='idle' />
             </section>
         </>
     );

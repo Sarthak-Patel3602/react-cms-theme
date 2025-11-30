@@ -1,27 +1,39 @@
 import React, { useState } from "react";
 import Styles from "../modules/AccordionExample/style.module.css";
 
+
+
+
 const Accordion = () => {
-  const faqData = [
-    {
-      id: 1,
-      question: "What is React.js and why should I use it?",
-      answer:
-        "React.js is a powerful JavaScript library for building user interfaces.",
-    },
-    {
-      id: 2,
-      question: "How does the Virtual DOM in React work?",
-      answer:
-        "React creates a virtual DOM and compares it with the real DOM.",
-    },
-  ];
+  // const faqData = [
+  //   {
+  //     id: 1,
+  //     question: "What is React.js and why should I use it?",
+  //     answer:
+  //       "React.js is a powerful JavaScript library for building user interfaces.",
+  //   },
+  //   {
+  //     id: 2,
+  //     question: "How does the Virtual DOM in React work?",
+  //     answer:
+  //       "React creates a virtual DOM and compares it with the real DOM.",
+  //   },
+  // ];
 
   const [activeId, setActiveId] = useState(null);
 
   const handleToggle = (id) => {
     setActiveId((prev) => (prev === id ? null : id));
   };
+
+
+  
+    const {
+        accordion_items = [],
+    } = props;
+
+    logInfo(props, 'props');
+
 
   return (
     <div>
