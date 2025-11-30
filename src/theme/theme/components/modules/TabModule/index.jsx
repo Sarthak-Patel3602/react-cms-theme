@@ -5,25 +5,25 @@ import { Island, logInfo } from '@hubspot/cms-components';
 
 export function Component(props) {
 
-    const {
+const {
+tab_items = [],
+} = props;
 
-    } = props;
-
-    logInfo(props, 'props');
-    return (
-        <>
-            <section>
-                <Island module={Tab} clientOnly hydrateOn='idle' />
-            </section>
-        </>
-    );
+// logInfo(props, 'props');
+return (
+    <>
+        <section>
+            <Island module={Tab} tab_items={tab_items} clientOnly hydrateOn='idle' />
+        </section>
+    </>
+);
 }
 
 export { fields } from './fields.jsx';
 
 
 export const meta = {
-    label: 'Tab Module Example',
+label: 'Tab Module Example',
 };
 
 

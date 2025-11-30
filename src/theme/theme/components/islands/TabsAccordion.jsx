@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Styles from '../modules/TabModule/style.module.css';
+import { logInfo } from '@hubspot/cms-components';
 
-const TabsAccordion = () => {
+
+const TabsAccordion = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
@@ -14,11 +16,20 @@ const TabsAccordion = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const tabs = [
-    { title: "Tab One", content: "This is content for Tab 1." },
-    { title: "Tab Two", content: "This is content for Tab 2." },
-    { title: "Tab Three", content: "This is content for Tab 3." },
-  ];
+  // const tabs = [
+  //   { title: "Tab One", content: "This is content for Tab 1." },
+  //   { title: "Tab Two", content: "This is content for Tab 2." },
+  //   { title: "Tab Three", content: "This is content for Tab 3." },
+  // ];
+
+  
+    const {
+        tab_items = [],
+    } = props;
+
+
+    logInfo(props, 'props');
+
 
   return (
     <div className={Styles.tab_container}>
@@ -27,19 +38,19 @@ const TabsAccordion = () => {
       {!isMobile && (
         <>
           <div className={Styles.tab_header}>
-            {tabs.map((tab, index) => (
+            {tab_items.map(({tab_title,tab_content}, index) => (
               <div
                 key={index}
                 className={`${Styles.tab_btn} ${activeIndex === index ? Styles.active : ""}`}
                 onClick={() => setActiveIndex(index)}
               >
-                {tab.title}
+                {tab_title}
               </div>
             ))}
           </div>
 
           <div className={Styles.tab_content}>
-            <p>{tabs[activeIndex].content}</p>
+            <p>{tab_items[activeIndex].tab_content}</p>
           </div>
         </>
       )}
@@ -47,19 +58,19 @@ const TabsAccordion = () => {
       {/* Mobile Accordion */}
       {isMobile && (
         <div className={Styles.accordion_wrapper}>
-          {tabs.map((tab, index) => (
+          {tab_items.map(({tab_title,tab_content}, index) => (
             <div key={index} className={Styles.accordion_item}>
               <div
                 className={Styles.accordion_header}
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
               >
-                {tab.title}
+                {tab_title}
                 <span className={Styles.arrow}>{activeIndex === index ? "-" : "+"}</span>
               </div>
 
               {activeIndex === index && (
                 <div className={Styles.accordion_body}>
-                  <p>{tab.content}</p>
+                  <p>{tab_content}</p>
                 </div>
               )}
             </div>
