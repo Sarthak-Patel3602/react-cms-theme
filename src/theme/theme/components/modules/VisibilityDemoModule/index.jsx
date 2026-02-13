@@ -3,7 +3,10 @@ import { logInfo } from '@hubspot/cms-components';
 import ResponsiveSpacingWrapper from '../../components/SpacingStyleComponent/ResponsiveSpacingWrapper.jsx';
 
 export function Component(props) {
-  const { module_id, sub_heading } = props;
+  const {
+    module_id,
+    groupContent: { show_heading, sub_heading },
+  } = props;
 
   logInfo(props, 'props');
   return (
