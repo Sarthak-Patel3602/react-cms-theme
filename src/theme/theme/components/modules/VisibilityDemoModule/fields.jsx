@@ -8,7 +8,7 @@ import {
 
 export const fields = (
   <ModuleFields>
-    <FieldGroup label="Content Module" name="groupContent" display="drilldown">
+    <FieldGroup label="Content Module" name="groupContent">
       <BooleanField
         name="show_heading"
         label="Show Heading"
@@ -21,7 +21,7 @@ export const fields = (
         name="sub_heading"
         default="Best Deals"
         visibility={{
-          controlling_field_path: 'show_heading',
+          controlling_field_path: 'groupContent.show_heading',
           operator: 'EQUAL',
           controlling_value_regex: 'true',
         }}
