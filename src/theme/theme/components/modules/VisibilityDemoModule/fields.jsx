@@ -1,0 +1,26 @@
+import React from 'react';
+import { ModuleFields, TextField } from '@hubspot/cms-components/fields';
+
+export const fields = (
+  <ModuleFields>
+    <FieldGroup label="Content Module" name="groupContent" display="drilldown">
+      <BooleanField
+        name="show_heading"
+        label="Show Heading"
+        display="toggle"
+        default={false}
+      />
+
+      <TextField
+        label="Sub Heading"
+        name="sub_heading"
+        default="Best Deals"
+        visibility={{
+          controlling_field_path: 'show_heading',
+          operator: 'EQUAL',
+          controlling_value_regex: 'true',
+        }}
+      />
+    </FieldGroup>
+  </ModuleFields>
+);
