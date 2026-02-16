@@ -1,5 +1,8 @@
 import React from 'react';
 import { logInfo } from '@hubspot/cms-components';
+// import this statement for heading component
+import HeadingComponent from '../../components/HeadingComponent/HeadingComponent.jsx';
+
 
 export function Component(props) {
     const {
@@ -10,7 +13,9 @@ export function Component(props) {
     return (
         <>
             <div className="Heading-container">
-              
+                  {headingAndTextHeading && (
+                <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} headingStyleColor={headingStyleColor} />
+              )}
             </div>
         </>
     );
