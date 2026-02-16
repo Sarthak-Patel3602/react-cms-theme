@@ -6,16 +6,26 @@ import HeadingComponent from '../../components/HeadingComponent/HeadingComponent
 
 export function Component(props) {
     const {
-        heading_group
+        heading_group: {
+            headingAndTextHeadingLevel,
+            headingStyleVariant,
+            headingAndTextHeading,
+            headingStyleColor
+        }
     } = props;
 
     logInfo(props, 'props');
     return (
         <>
             <div className="Heading-container">
-                  {headingAndTextHeading && (
-                <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} headingStyleColor={headingStyleColor} />
-              )}
+                {headingAndTextHeading && (
+                    <HeadingComponent
+                        headingLevel={headingAndTextHeadingLevel}
+                        headingStyleVariant={headingStyleVariant}
+                        heading={headingAndTextHeading}
+                        headingStyleColor={headingStyleColor}
+                    />
+                )}
             </div>
         </>
     );
