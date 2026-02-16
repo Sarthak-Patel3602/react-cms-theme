@@ -12,6 +12,7 @@ export function Component(props) {
             headingAndTextHeading,
             headingStyleColor
         },
+        // when use multiple heading
         second_heading_group: {
                 headingAndTextHeadingLevel: headingAndTextHeadingLevelV2,
                 headingStyleVariant: headingStyleVariantV2,
@@ -33,7 +34,8 @@ export function Component(props) {
                     />
                 )}
             </div>
-
+            
+            {/* when use multiple heading */}
             <div className="Second-Heading-container">
                 {headingAndTextHeadingV2 && (
                     <HeadingComponent

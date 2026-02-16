@@ -10,14 +10,14 @@ import HeadingContent from '../../components/HeadingComponent/HeadingContent.jsx
 
 export const fields = (
     <ModuleFields>
-           <FieldGroup
+        <FieldGroup
                     label='Heading Group'
                     name='heading_group'
                 >
                 <HeadingContent />
                 <HeadingStyles headingStyleAsDefault='h3' />
         </FieldGroup>
-
+       {/* when use multiple heading */}
         <FieldGroup
                     label='Second Heading Group'
                     name='second_heading_group'
