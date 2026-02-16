@@ -22,7 +22,7 @@ export function Component(props) {
     groupStyle: {
       groupContent: {
         headingStyleVariant,
-headingStyleColor,
+        headingStyleColor,
         groupButton: {
           buttonStyleSize,
           buttonStyleVariant,
