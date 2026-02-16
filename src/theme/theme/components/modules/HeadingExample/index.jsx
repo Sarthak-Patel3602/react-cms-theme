@@ -13,12 +13,10 @@ export function Component(props) {
             headingStyleColor
         },
         second_heading_group: {
-            second_heading_group: {
                 headingAndTextHeadingLevel: headingAndTextHeadingLevelV2,
                 headingStyleVariant: headingStyleVariantV2,
                 headingAndTextHeading: headingAndTextHeadingV2,
-                headingStyleColor: headingStyleColorV2
-            }
+                headingStyleColor: headingStyleColorV2  
         }
     } = props;
 
