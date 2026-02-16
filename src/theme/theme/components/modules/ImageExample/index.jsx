@@ -49,7 +49,7 @@ export function Component(props) {
                   .join(' ') || undefined
               }
             >
-              <RenderImage imageField={image_field} />
+              <RenderImage imageField={image_link_field.image_field} />
             </a>
           </div>;
         })}
