@@ -49,14 +49,16 @@ export function Component(props) {
 
       <div className="third-heading-container">
         {third_heading_group.map((heading, index) => {
-          <div className="heading">
-            <HeadingComponent
-              headingLevel={heading.headingAndTextHeadingLevel}
-              headingStyleVariant={heading.headingStyleVariant}
-              heading={heading.headingAndTextHeading}
-              headingStyleColor={heading.headingStyleColor}
-            />
-          </div>;
+          return (
+            <div className="heading" key={index}>
+              <HeadingComponent
+                headingLevel={heading.headingAndTextHeadingLevel}
+                headingStyleVariant={heading.headingStyleVariant}
+                heading={heading.headingAndTextHeading}
+                headingStyleColor={heading.headingStyleColor}
+              />
+            </div>
+          );
         })}
       </div>
     </>
