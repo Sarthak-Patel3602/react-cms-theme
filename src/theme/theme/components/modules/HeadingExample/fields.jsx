@@ -2,6 +2,7 @@ import React from 'react';
 import {
     ModuleFields,
     TextField,
+    FieldGroup
 } from '@hubspot/cms-components/fields';
 // import both statement for heading
 import HeadingStyles from '../../components/HeadingComponent/HeadingStyle.jsx';
