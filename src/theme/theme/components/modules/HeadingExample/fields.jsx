@@ -3,6 +3,7 @@ import {
   ModuleFields,
   TextField,
   FieldGroup,
+  RepeatedFieldGroup,
 } from '@hubspot/cms-components/fields';
 // import both statement for heading
 import HeadingStyles from '../../components/HeadingComponent/HeadingStyle.jsx';
