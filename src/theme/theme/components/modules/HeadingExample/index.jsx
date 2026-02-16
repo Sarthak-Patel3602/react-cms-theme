@@ -10,9 +10,7 @@ export function Component(props) {
     return (
         <>
             <div className="Heading-container">
-                {headingAndTextHeading && (
-                    <HeadingComponent headingLevel={headingAndTextHeadingLevel} headingStyleVariant={headingStyleVariant} heading={headingAndTextHeading} headingStyleColor={headingStyleColor} />
-                )}
+              
             </div>
         </>
     );
