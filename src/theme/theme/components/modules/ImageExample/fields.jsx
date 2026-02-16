@@ -4,6 +4,7 @@ import {
   FieldGroup,
   ImageField,
   LinkField,
+  RepeatedFieldGroup,
 } from '@hubspot/cms-components/fields';
 
 export const fields = (
