@@ -49,15 +49,17 @@ export function Component(props) {
 
       {/* when use multiple heading components with repeater */}
       <div className="third-heading-container">
-        {third_heading_group.length > 0 &&
-          third_heading_group.map((heading, index) => (
+        {Array.isArray(props.third_heading_group) &&
+          props.third_heading_group.map((heading, index) => (
             <div className="heading" key={index}>
-              <HeadingComponent
-                headingLevel={heading.headingAndTextHeadingLevel}
-                headingStyleVariant={heading.headingStyleVariant}
-                heading={heading.headingAndTextHeading}
-                headingStyleColor={heading.headingStyleColor}
-              />
+              {heading?.headingAndTextHeading && (
+                <HeadingComponent
+                  headingLevel={heading.headingAndTextHeadingLevel}
+                  headingStyleVariant={heading.headingStyleVariant}
+                  heading={heading.headingAndTextHeading}
+                  headingStyleColor={heading.headingStyleColor}
+                />
+              )}
             </div>
           ))}
       </div>
