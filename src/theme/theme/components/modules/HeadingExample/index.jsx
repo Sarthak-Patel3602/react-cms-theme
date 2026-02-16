@@ -11,7 +11,7 @@ export function Component(props) {
       headingAndTextHeading,
       headingStyleColor,
     },
-    // when use multiple heading
+    // when use multiple heading component
     second_heading_group: {
       headingAndTextHeadingLevel: headingAndTextHeadingLevelV2,
       headingStyleVariant: headingStyleVariantV2,
@@ -35,7 +35,7 @@ export function Component(props) {
         )}
       </div>
 
-      {/* when use multiple heading */}
+      {/* when use multiple heading components */}
       <div className="Second-Heading-container">
         {headingAndTextHeadingV2 && (
           <HeadingComponent
@@ -47,9 +47,10 @@ export function Component(props) {
         )}
       </div>
 
+      {/* when use multiple heading components with repeater */}
       <div className="third-heading-container">
-        {third_heading_group.map((heading, index) => {
-          return (
+        {third_heading_group.length > 0 &&
+          third_heading_group.map((heading, index) => (
             <div className="heading" key={index}>
               <HeadingComponent
                 headingLevel={heading.headingAndTextHeadingLevel}
@@ -58,8 +59,7 @@ export function Component(props) {
                 headingStyleColor={heading.headingStyleColor}
               />
             </div>
-          );
-        })}
+          ))}
       </div>
     </>
   );
