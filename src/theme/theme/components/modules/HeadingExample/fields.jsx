@@ -17,5 +17,13 @@ export const fields = (
                 <HeadingContent />
                 <HeadingStyles headingStyleAsDefault='h3' />
         </FieldGroup>
+
+        <FieldGroup
+                    label='Second Heading Group'
+                    name='second_heading_group'
+                >
+                <HeadingContent />
+                <HeadingStyles headingStyleAsDefault='h3' />
+        </FieldGroup>
     </ModuleFields>
 );

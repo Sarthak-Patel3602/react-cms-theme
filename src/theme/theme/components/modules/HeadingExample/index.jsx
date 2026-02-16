@@ -11,6 +11,12 @@ export function Component(props) {
             headingStyleVariant,
             headingAndTextHeading,
             headingStyleColor
+        },
+        second_heading_group:{
+           headingAndTextHeadingLevelV2 = headingAndTextHeadingLevel,
+           headingStyleVariantV2 = headingStyleVariant,
+           headingAndTextHeadingV2 = headingAndTextHeading,
+           headingStyleColorV2 = headingStyleColor
         }
     } = props;
 
@@ -24,6 +30,17 @@ export function Component(props) {
                         headingStyleVariant={headingStyleVariant}
                         heading={headingAndTextHeading}
                         headingStyleColor={headingStyleColor}
+                    />
+                )}
+            </div>
+
+             <div className="Second-Heading-container">
+                {headingAndTextHeadingV2 && (
+                    <HeadingComponent
+                        headingLevel={headingAndTextHeadingLevelV2}
+                        headingStyleVariant={headingStyleVariantV2}
+                        heading={headingAndTextHeadingV2}
+                        headingStyleColor={headingStyleColorV2}
                     />
                 )}
             </div>
