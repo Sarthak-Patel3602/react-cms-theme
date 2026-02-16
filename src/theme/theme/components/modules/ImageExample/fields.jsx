@@ -1,5 +1,9 @@
 import React from 'react';
-import { ModuleFields, TextField } from '@hubspot/cms-components/fields';
+import {
+  ModuleFields,
+  FieldGroup,
+  ImageField,
+} from '@hubspot/cms-components/fields';
 
 export const fields = (
   <ModuleFields>
