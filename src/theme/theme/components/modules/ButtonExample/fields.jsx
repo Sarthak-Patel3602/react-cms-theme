@@ -16,7 +16,7 @@ const matchButtonType = {
 };
 
 const matchCtaType = {
-    controlling_field_path: 'buttonGroup.groupButton.buttonContentType',
+    controlling_field_path: 'buttonGroup.buttonContentType',
     operator: 'MATCHES_REGEX',
     controlling_value_regex: '^cta$'
 };
