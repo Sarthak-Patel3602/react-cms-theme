@@ -2,6 +2,8 @@ import React from 'react';
 import { logInfo } from '@hubspot/cms-components';
 // import this statement for button component
 import { Button } from '../../components/ButtonComponent/ButtonComponent.jsx';
+import { getLinkFieldHref, getLinkFieldRel, getLinkFieldTarget } from '../../utils/content-fields.jsx';
+
 
 
 export function Component(props) {
@@ -18,9 +20,9 @@ export function Component(props) {
         }
     } = props;
 
-    const buttonHref = getLinkFieldHref(link);
-    const buttonRel = getLinkFieldRel(link);
-    const buttonTarget = getLinkFieldTarget(link);
+    // const buttonHref = getLinkFieldHref(link);
+    // const buttonRel = getLinkFieldRel(link);
+    // const buttonTarget = getLinkFieldTarget(link);
 
 
     logInfo(props, 'props');
@@ -29,9 +31,9 @@ export function Component(props) {
             {showButton && <Button
                 buttonSize={buttonStyleSize}
                 buttonStyle={buttonStyleVariant}
-                href={buttonHref}
-                rel={buttonRel}
-                target={buttonTarget}
+                href={getLinkFieldHref(link)}
+                rel={getLinkFieldHref(link)}
+                target={getLinkFieldHref(link)}
                 showIcon={showIcon}
                 iconFieldPath='buttonGroup.buttonContentIcon'
                 iconPosition={iconPosition}
