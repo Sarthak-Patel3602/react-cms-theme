@@ -25,12 +25,12 @@ export function Component(props) {
                     key={index}
                     buttonSize={item.buttonStyleSize}
                     buttonStyle={item.buttonStyleVariant}
-                    href={getLinkFieldHref(item.link)}
-                    rel={getLinkFieldRel(item.link)}
-                    target={getLinkFieldTarget(item.link)}
+                    href={getLinkFieldHref(item.buttonContentLink)}
+                    rel={getLinkFieldRel(item.buttonContentLink)}
+                    target={getLinkFieldTarget(item.buttonContentLink)}
                     showIcon={item.showIcon}
                     iconFieldPath={`buttonGroup[${index}].buttonContentIcon`}
-                    iconPosition={item.iconPosition}
+                    iconPosition={item.buttonContentIconPosition}
                     additionalClassArray={['button-container__button']}
                     ctaFieldpath={`buttonGroup[${index}].ctaField`}
                     buttonType={item.buttonContentType}
