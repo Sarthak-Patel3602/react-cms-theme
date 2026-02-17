@@ -8,6 +8,14 @@ import ButtonContent from '../../components/ButtonComponent/ButtonContent.jsx';
 import ButtonStyle from '../../components/ButtonComponent/ButtonStyle.jsx';
 
 
+const buttonFieldVisibility = {
+    boolean_operator: 'OR',
+    criteria: [{
+        controlling_field_path: 'buttonGroup.showButton',
+        controlling_value_regex: 'true',
+        operator: 'EQUAL',
+    }]
+}
 
 const matchButtonType = {
     controlling_field_path: 'buttonGroup.buttonContentType',
@@ -58,12 +66,7 @@ export const fields = (
             name='buttonGroup'
             display='inline'
             visibilityRules='ADVANCED'
-            visibility={{
-                controlling_field_path: 'showButton',
-                operator: 'EQUAL',
-                controlling_value_regex: 'true',
-            }}
-
+            advancedVisibility={buttonFieldVisibility}
         >
             <ButtonContent
                 textDefault='Learn more'
