@@ -11,7 +11,7 @@ import ButtonStyle from '../../components/ButtonComponent/ButtonStyle.jsx';
 const buttonFieldVisibility = {
     boolean_operator: 'OR',
     criteria: [{
-        controlling_field_path: 'buttonGroup.showButton',
+        controlling_field_path: 'showButton',
         controlling_value_regex: 'true',
         operator: 'EQUAL',
     }]
