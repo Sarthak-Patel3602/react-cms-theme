@@ -28,7 +28,7 @@ export function Component(props) {
                     href={getLinkFieldHref(item.buttonContentLink)}
                     rel={getLinkFieldRel(item.buttonContentLink)}
                     target={getLinkFieldTarget(item.buttonContentLink)}
-                    showIcon={item.showIcon}
+                    showIcon={item.buttonContentShowIcon}
                     iconFieldPath={`buttonGroup[${index}].buttonContentIcon`}
                     iconPosition={item.buttonContentIconPosition}
                     additionalClassArray={['button-container__button']}

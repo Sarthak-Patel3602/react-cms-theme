@@ -9,7 +9,7 @@ export function Component(props) {
 
   } = props;
 
-  logInfo(props, 'props');
+  // logInfo(props, 'props');
   return (
     <>
       <section>
