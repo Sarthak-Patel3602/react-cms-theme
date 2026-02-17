@@ -34,24 +34,25 @@ export function Component(props) {
       {/* image with link with repeater */}
       <div className="image-container-with-repeater">
         {image_group.map((image_link_field, index) => {
-          <div className="image" key={index}>
-            <a
-              href={image_link_field?.url?.href_with_scheme || '#'}
-              target={image_link_field.open_in_new_tab ? '_blank' : '_self'}
-              rel={
-                [
-                  image_link_field.no_follow ? 'nofollow' : '',
-                  image_link_field.sponsored ? 'sponsored' : '',
-                  image_link_field.user_generated_content ? 'ugc' : '',
-                  image_link_field.rel || '',
-                ]
-                  .filter(Boolean)
-                  .join(' ') || undefined
-              }
-            >
-              <RenderImage imageField={image_link_field.image_field} />
-            </a>
-          </div>;
+          return (
+            <div className="image" key={index}>
+              <a
+                href={image_link_field?.url?.href_with_scheme || '#'}
+                target={image_link_field.open_in_new_tab ? '_blank' : '_self'}
+                rel={
+                  [
+                    image_link_field.no_follow ? 'nofollow' : '',
+                    image_link_field.sponsored ? 'sponsored' : '',
+                    image_link_field.user_generated_content ? 'ugc' : '',
+                    image_link_field.rel || '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ') || undefined
+                }
+              >
+                <RenderImage imageField={image_link_field.image_field} />
+              </a>
+            </div>);
         })}
       </div>
     </>
