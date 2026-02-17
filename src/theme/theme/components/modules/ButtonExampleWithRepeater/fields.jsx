@@ -2,7 +2,8 @@ import React from 'react';
 import {
     ModuleFields,
     FieldGroup,
-    BooleanField
+    BooleanField,
+    RepeatedFieldGroup
 } from '@hubspot/cms-components/fields';
 import ButtonContent from '../../components/ButtonComponent/ButtonContent.jsx';
 import ButtonStyle from '../../components/ButtonComponent/ButtonStyle.jsx';
