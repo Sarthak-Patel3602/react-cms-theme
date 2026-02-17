@@ -18,6 +18,10 @@ export function Component(props) {
         }
     } = props;
 
+    const buttonHref = getLinkFieldHref(link);
+    const buttonRel = getLinkFieldRel(link);
+    const buttonTarget = getLinkFieldTarget(link);
+
 
     logInfo(props, 'props');
     return (
@@ -25,9 +29,9 @@ export function Component(props) {
             {showButton && <Button
                 buttonSize={buttonStyleSize}
                 buttonStyle={buttonStyleVariant}
-                href={getLinkFieldHref(link)}
-                rel={getLinkFieldHref(link)}
-                target={getLinkFieldHref(link)}
+                href={buttonHref}
+                rel={buttonRel}
+                target={buttonTarget}
                 showIcon={showIcon}
                 iconFieldPath='buttonGroup.buttonContentIcon'
                 iconPosition={iconPosition}
