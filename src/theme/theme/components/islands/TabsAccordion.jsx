@@ -28,7 +28,7 @@ const TabsAccordion = (props) => {
     } = props;
 
 
-    logInfo(props, 'props');
+    // logInfo(props, 'props');
 
 
   return (

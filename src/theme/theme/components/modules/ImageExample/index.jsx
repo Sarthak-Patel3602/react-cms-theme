@@ -8,7 +8,7 @@ export function Component(props) {
     groupContent: { image_field, image_link_field, image_group = [] },
   } = props;
 
-  logInfo(props, 'props');
+  // logInfo(props, 'props');
   return (
     <>
       {/* image with link without repeater */}

@@ -22,7 +22,7 @@ export function Component(props) {
     third_heading_group = [],
   } = props;
 
-  logInfo(props, 'props');
+  // logInfo(props, 'props');
   return (
     <>
       <div className="Heading-container">

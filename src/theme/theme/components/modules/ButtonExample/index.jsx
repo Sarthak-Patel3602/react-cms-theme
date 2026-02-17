@@ -25,7 +25,7 @@ export function Component(props) {
     // const buttonTarget = getLinkFieldTarget(link);
 
 
-    logInfo(props, 'props');
+    // logInfo(props, 'props');
     return (
         <>
             {showButton && <Button

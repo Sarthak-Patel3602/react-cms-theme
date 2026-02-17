@@ -8,7 +8,7 @@ export function Component(props) {
     groupContent: { show_heading, sub_heading },
   } = props;
 
-  logInfo(props, 'props');
+  // logInfo(props, 'props');
   return (
     <>
       <ResponsiveSpacingWrapper

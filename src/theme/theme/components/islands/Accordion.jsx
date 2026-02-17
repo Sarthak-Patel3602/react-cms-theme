@@ -17,7 +17,7 @@ const Accordion = (props) => {
         accordion_items = [],
     } = props;
 
-    logInfo(props, 'props');
+    // logInfo(props, 'props');
 
 
   return (

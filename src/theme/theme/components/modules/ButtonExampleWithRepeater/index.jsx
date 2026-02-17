@@ -22,7 +22,6 @@ export function Component(props) {
         <>
             {showButton && buttonGroup.map((item, index) => (
                 <Button
-                    key={index}
                     buttonSize={item.buttonStyleSize}
                     buttonStyle={item.buttonStyleVariant}
                     href={getLinkFieldHref(item.link)}
@@ -35,7 +34,7 @@ export function Component(props) {
                     ctaFieldpath={`buttonGroup[${index}].ctaField`}
                     buttonType={item.buttonContentType}
                 >
-                    {item.text}
+                    {item.buttonContentText}
                 </Button>
             ))}
         </>

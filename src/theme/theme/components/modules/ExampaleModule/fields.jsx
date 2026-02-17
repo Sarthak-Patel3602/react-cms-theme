@@ -130,7 +130,7 @@ export const fields = (
                 name='groupButton'
                 display='inline'
                 visibilityRules='ADVANCED'
-        advancedVisibility={buttonFieldVisibility}
+                advancedVisibility={buttonFieldVisibility}
             >
                 <ButtonContent
                     textDefault='Learn more'
