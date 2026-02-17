@@ -32,8 +32,8 @@ export function Component(props) {
                 buttonSize={buttonStyleSize}
                 buttonStyle={buttonStyleVariant}
                 href={getLinkFieldHref(link)}
-                rel={getLinkFieldHref(link)}
-                target={getLinkFieldHref(link)}
+                rel={getLinkFieldRel(link)}
+                target={getLinkFieldTarget(link)}
                 showIcon={showIcon}
                 iconFieldPath='buttonGroup.buttonContentIcon'
                 iconPosition={iconPosition}
