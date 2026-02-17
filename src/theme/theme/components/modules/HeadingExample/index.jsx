@@ -18,6 +18,7 @@ export function Component(props) {
       headingAndTextHeading: headingAndTextHeadingV2,
       headingStyleColor: headingStyleColorV2,
     },
+    // when use multiple heading component with repeater
     third_heading_group = [],
   } = props;
 
