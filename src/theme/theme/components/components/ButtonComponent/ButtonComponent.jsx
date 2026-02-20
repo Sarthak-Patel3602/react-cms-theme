@@ -56,7 +56,7 @@ export const Button = (props) => {
         <Cta fieldPath={ctaFieldpath} />
       ) : buttonType === 'button' ? (
         <StyledButton
-          $buttonSize={buttonSize}
+          // $buttonSize={buttonSize}
           className={`button ${buttonClassName} ${additionalClasses} ${buttonSizeName} ${showIcon ? 'button__icon' : ''
             } button--icon-${iconPosition}`}
           target={target}
